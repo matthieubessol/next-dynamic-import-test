@@ -24,3 +24,7 @@ a {
     background: black;
   }
 }
+
+header {
+  border: 1px solid red;
+}
