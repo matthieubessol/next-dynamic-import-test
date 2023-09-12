@@ -32,7 +32,7 @@ const nextConfig = {
         salut: 2,
       })
     );
-    // config.plugins.push(new DefinePlugin(env));
+
     return config;
   },
 };
