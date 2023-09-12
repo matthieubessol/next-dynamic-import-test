@@ -3,8 +3,13 @@ import styles from "../styles/Home.module.css";
 
 import Header from "../components/header";
 import { GetServerSideProps } from "next";
+import { useState } from "react";
+import dynamic from "next/dynamic";
+
+const Welcome = dynamic(() => import("../components/welcome"));
 
 export default function Home() {
+  const [show, setShow] = useState(false);
   return (
     <div className={styles.container}>
       <Head>
@@ -16,7 +21,11 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
 
-        <p>Content for page /index.js</p>
+        <div>
+          <p>Content for page /index.js</p>
+          <button onClick={() => setShow(true)}>Open hello</button>
+          {show && <Welcome />}
+        </div>
       </main>
     </div>
   );
